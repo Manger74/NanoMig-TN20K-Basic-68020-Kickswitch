@@ -1,7 +1,14 @@
 // =========================================================================
-// kick_switch_lite.sv
-// Copies Kickstart ROM from Flash to SDRAM.
-// Detects OSD kickstart selection changes and restarts the copy SM.
+// kick_switch_lite.v
+// Copies Kickstart ROM from Flash to SDRAM
+// Detects OSD kickstart selection changes and restarts the copy routine
+//
+// To use the Kick Switch Lite, the ROMs must be flashed like this:
+//
+// 0x400000 Kickstart 3.1 / 512k (default)
+// 0x700000 Kickstart 1.3 / 256k (optional)
+// 0x740000 Kickstart 1.3 / 256k (optional)
+// 0x780000 Kickstart 3.2 / 512k (optional)
 // =========================================================================
 
 module kick_switch_lite (
