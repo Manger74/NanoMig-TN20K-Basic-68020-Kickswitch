@@ -1,7 +1,7 @@
-Reading netlist file: "C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\impl\gwsynthesis\nanomig.vg"
-Parsing netlist file "C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\impl\gwsynthesis\nanomig.vg" completed
+Reading netlist file: "C:\GitHub\NanoMig-TN20K-Basic-68020\src\impl\gwsynthesis\nanomig.vg"
+Parsing netlist file "C:\GitHub\NanoMig-TN20K-Basic-68020\src\impl\gwsynthesis\nanomig.vg" completed
 Processing netlist completed
-Reading constraint file: "C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\tang\nano20k\nanomig.cst"
+Reading constraint file: "C:\GitHub\NanoMig-TN20K-Basic-68020\src\tang-nano20k\nanomig.cst"
 Physical Constraint parsed completed
 Running placement......
 [10%] Placement Phase 0 completed
@@ -29,10 +29,10 @@ Bitstream generation in progress......
 Bitstream generation completed
 Running power analysis......
 [100%] Power analysis completed
-Generate file "C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\impl\pnr\nanomig.power.html" completed
-Generate file "C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\impl\pnr\nanomig.pin.html" completed
-Generate file "C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\impl\pnr\nanomig.rpt.html" completed
-Generate file "C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\impl\pnr\nanomig.rpt.txt" completed
-Generate file "C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\impl\pnr\nanomig.tr.html" completed
-Thu May 14 14:17:51 2026
+Generate file "C:\GitHub\NanoMig-TN20K-Basic-68020\src\impl\pnr\nanomig.power.html" completed
+Generate file "C:\GitHub\NanoMig-TN20K-Basic-68020\src\impl\pnr\nanomig.pin.html" completed
+Generate file "C:\GitHub\NanoMig-TN20K-Basic-68020\src\impl\pnr\nanomig.rpt.html" completed
+Generate file "C:\GitHub\NanoMig-TN20K-Basic-68020\src\impl\pnr\nanomig.rpt.txt" completed
+Generate file "C:\GitHub\NanoMig-TN20K-Basic-68020\src\impl\pnr\nanomig.tr.html" completed
+Thu May 14 19:17:05 2026
 

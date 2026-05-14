@@ -116,7 +116,7 @@ module paula
 	output [8:0] ldata_okk,		//left DAC data (PWM volume)
 	output [8:0] rdata_okk, 	//right DAC data (PWM volume)
 	// system configuration
-	input	  [1:0] floppy_drives,	//number of extra floppy drives
+	input	  [1:0] floppy_drives,	//number of extra floppy drives // 
 	input	        floppy_wrprot	//floppies are write protected
 );
 //--------------------------------------------------------------------------------------
@@ -132,7 +132,7 @@ reg		dmaen;					//master dma enable
 reg		[14:0] adkcon;			//audio and disk control register
 wire	[15:0] uartdata_out; 	//UART data out
 wire	[15:0] intdata_out;  	//interrupt controller data out
-wire	[15:0] diskdata_out;		//disk controller data out
+wire	[15:0] diskdata_out;	//disk controller data out
 wire	[15:0] adkconr;			//ADKCONR register data out
 wire	rbfmirror; 				//rbf mirror (from uart to interrupt controller)
 wire	rxint;  				//uart rx interrupt request

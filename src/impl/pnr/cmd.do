@@ -1,15 +1,15 @@
--d C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\impl\gwsynthesis\nanomig.vg
+-d C:\GitHub\NanoMig-TN20K-Basic-68020\src\impl\gwsynthesis\nanomig.vg
 -p GW2AR-18C-QFN88-8
 -pn GW2AR-LV18QN88C8/I7
--cst C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\tang\nano20k\nanomig.cst
--cfg C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\impl\pnr\device.cfg
--sdc C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\tang\nano20k\nanomig.sdc
+-cst C:\GitHub\NanoMig-TN20K-Basic-68020\src\tang-nano20k\nanomig.cst
+-cfg C:\GitHub\NanoMig-TN20K-Basic-68020\src\impl\pnr\device.cfg
+-sdc C:\GitHub\NanoMig-TN20K-Basic-68020\src\tang-nano20k\nanomig.sdc
 -bit
 -tr
 -ph
 -timing
 -cst_error
--place_option 2
+-place_option 1
 -route_option 1
 -clock_route_order 0
 -correct_hold 1
