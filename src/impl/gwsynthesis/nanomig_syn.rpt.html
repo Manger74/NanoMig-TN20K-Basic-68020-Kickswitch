@@ -1,0 +1,3284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>synthesis Report</title>
+<style type="text/css">
+body { font-family: Verdana, Arial, sans-serif; font-size: 12px; }
+div#main_wrapper{ width: 100%; }
+div#content { margin-left: 350px; margin-right: 30px; }
+div#catalog_wrapper {position: fixed; top: 30px; width: 350px; float: left; }
+div#catalog ul { list-style-type: none; }
+div#catalog li { text-align: left; list-style-type:circle; color: #0084ff; margin-top: 3px; margin-bottom: 3px; }
+div#catalog a { display:inline-block; text-decoration: none; color: #0084ff; font-weight: bold; padding: 3px; }
+div#catalog a:visited { color: #0084ff; }
+div#catalog a:hover { color: #fff; background: #0084ff; }
+hr { margin-top: 30px; margin-bottom: 30px; }
+h1, h3 { text-align: center; }
+h1 {margin-top: 50px; }
+table, th, td { border: 1px solid #aaa; }
+table { border-collapse:collapse; margin-top: 10px; margin-bottom: 20px; width: 100%; }
+th, td { padding: 5px 5px 5px 5px; }
+th { color: #fff; font-weight: bold; background-color: #0084ff; }
+table.summary_table td.label { width: 24%; min-width: 200px; background-color: #dee8f4; }
+table.detail_table td.label { min-width: 100px; width: 8%;}
+</style>
+</head>
+<body>
+<div id="main_wrapper">
+<div id="catalog_wrapper">
+<div id="catalog">
+<ul>
+<li><a href="#about" style=" font-size: 16px;">Synthesis Messages</a></li>
+<li><a href="#summary" style=" font-size: 16px;">Synthesis Details</a></li>
+<li><a href="#resource" style=" font-size: 16px;">Resource</a>
+<ul>
+<li><a href="#usage" style=" font-size: 14px;">Resource Usage Summary</a></li>
+<li><a href="#utilization" style=" font-size: 14px;">Resource Utilization Summary</a></li>
+</ul>
+</li>
+<li><a href="#timing" style=" font-size: 16px;">Timing</a>
+<ul>
+<li><a href="#clock" style=" font-size: 14px;">Clock Summary</a></li>
+<li><a href="#performance" style=" font-size: 14px;">Max Frequency Summary</a></li>
+<li><a href="#detail timing" style=" font-size: 14px;">Detail Timing Paths Informations</a></li>
+</ul>
+</li>
+</ul>
+</div><!-- catalog -->
+</div><!-- catalog_wrapper -->
+<div id="content">
+<h1><a name="about">Synthesis Messages</a></h1>
+<table class="summary_table">
+<tr>
+<td class="label">Report Title</td>
+<td>GowinSynthesis Report</td>
+</tr>
+<tr>
+<td class="label">Design File</td>
+<td>C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\nanomig.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\cache.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\hdmi\audio_clock_regeneration_packet.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\hdmi\audio_info_frame.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\hdmi\audio_sample_packet.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\hdmi\auxiliary_video_information_info_frame.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\hdmi\hdmi.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\hdmi\packet_assembler.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\hdmi\packet_picker.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\hdmi\serializer.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\hdmi\source_product_description_info_frame.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\hdmi\tmds_channel.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_audiodma.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_beamcounter.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_bitplanedma.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_blitter.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_blitter_adrgen.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_blitter_barrelshifter.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_blitter_fill.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_blitter_minterm.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_copper.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_diskdma.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_refresh.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\agnus_spritedma.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\amiga_clk.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\cia_int.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\cia_timera.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\cia_timerb.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\cia_timerd.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\ciaa.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\ciab.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\cpu_wrapper.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\denise.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\denise_bitplane_shifter.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\denise_bitplanes.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\denise_collision.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\denise_colortable.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\denise_colortable_ram_mf.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\denise_hamgenerator.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\denise_playfields.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\denise_spritepriority.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\denise_sprites.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\denise_sprites_shifter.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\gary.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\gayle.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\ide.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\minimig.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\minimig_bankmapper.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\minimig_m68k_bridge.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\minimig_sram_bridge.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\minimig_syscontrol.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\paula.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\paula_audio.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\paula_audio_channel.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\paula_audio_mixer.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\paula_audio_volume.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\paula_floppy.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\paula_floppy_fifo.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\paula_intcontroller.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\paula_uart.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig-aga\userio.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\minimig\Amber.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\amiga_keymap.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\flash_dspi.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\hid.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\mcu_spi.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\osd_u8g2.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\sd_card.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\sd_rw.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\sdcmd_ctrl.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\sdram.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\sysctrl.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\video_analyzer.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\misc\ws2812.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\tang\nano20k\amigaclks.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\tang\nano20k\gowin_dpb\ide_dpram.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\tang\nano20k\gowin_dpb\sector_dpram.v<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\tang\nano20k\top.sv<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\tg68k\TG68K.vhd<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\tg68k\TG68K_ALU.vhd<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\tg68k\TG68K_Pack.vhd<br>
+C:\Users\Gerald\Desktop\NanoMig-TN20K-Basic-68020-main\src\tg68k\TG68KdotC_Kernel.vhd<br>
+</td>
+</tr>
+<tr>
+<td class="label">GowinSynthesis Constraints File</td>
+<td>---</td>
+</tr>
+<tr>
+<td class="label">Tool Version</td>
+<td>V1.9.12.02_SP2 (64-bit)</td>
+</tr>
+<tr>
+<td class="label">Part Number</td>
+<td>GW2AR-LV18QN88C8/I7</td>
+</tr>
+<tr>
+<td class="label">Device</td>
+<td>GW2AR-18</td>
+</tr>
+<tr>
+<td class="label">Device Version</td>
+<td>C</td>
+</tr>
+<tr>
+<td class="label">Created Time</td>
+<td>Thu May 14 14:15:00 2026
+</td>
+</tr>
+<tr>
+<td class="label">Legal Announcement</td>
+<td>Copyright (C)2014-2026 Gowin Semiconductor Corporation. ALL rights reserved.</td>
+</tr>
+</table>
+<h1><a name="summary">Synthesis Details</a></h1>
+<table class="summary_table">
+<tr>
+<td class="label">Top Level Module</td>
+<td>top</td>
+</tr>
+<tr>
+<td class="label">Synthesis Process</td>
+<td>Running parser:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 371.926MB<br/>Running netlist conversion:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 0s, Elapsed time = 0h 0m 0s, Peak memory usage = 0MB<br/>Running device independent optimization:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 0: CPU time = 0h 0m 6s, Elapsed time = 0h 0m 6s, Peak memory usage = 371.926MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 1: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 371.926MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Optimizing Phase 2: CPU time = 0h 0m 5s, Elapsed time = 0h 0m 5s, Peak memory usage = 371.926MB<br/>Running inference:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 0: CPU time = 0h 0m 3s, Elapsed time = 0h 0m 3s, Peak memory usage = 371.926MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 1: CPU time = 0h 0m 0.281s, Elapsed time = 0h 0m 0.278s, Peak memory usage = 371.926MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 2: CPU time = 0h 0m 0.14s, Elapsed time = 0h 0m 0.133s, Peak memory usage = 371.926MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Inferring Phase 3: CPU time = 0h 0m 0.109s, Elapsed time = 0h 0m 0.115s, Peak memory usage = 371.926MB<br/>Running technical mapping:<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 0: CPU time = 0h 0m 4s, Elapsed time = 0h 0m 4s, Peak memory usage = 371.926MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 1: CPU time = 0h 0m 0.515s, Elapsed time = 0h 0m 0.513s, Peak memory usage = 371.926MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 2: CPU time = 0h 0m 0.609s, Elapsed time = 0h 0m 0.603s, Peak memory usage = 371.926MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 3: CPU time = 0h 0m 49s, Elapsed time = 0h 0m 49s, Peak memory usage = 382.156MB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Tech-Mapping Phase 4: CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 382.156MB<br/>Generate output files:<br/>&nbsp;&nbsp;&nbsp;&nbsp;CPU time = 0h 0m 1s, Elapsed time = 0h 0m 1s, Peak memory usage = 442.402MB<br/></td>
+</tr>
+<tr>
+<td class="label">Total Time and Memory Usage</td>
+<td>CPU time = 0h 1m 12s, Elapsed time = 0h 1m 12s, Peak memory usage = 442.402MB</td>
+</tr>
+</table>
+<h1><a name="resource">Resource</a></h1>
+<h2><a name="usage">Resource Usage Summary</a></h2>
+<table class="summary_table">
+<tr>
+<td class="label"><b>Resource</b></td>
+<td><b>Usage</b></td>
+</tr>
+<tr>
+<td class="label"><b>I/O Port </b></td>
+<td>55</td>
+</tr>
+<tr>
+<td class="label"><b>Embedded Port </b></td>
+<td>55</td>
+</tr>
+<tr>
+<td class="label"><b>I/O Buf </b></td>
+<td>106</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspIBUF</td>
+<td>19</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspOBUF</td>
+<td>37</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspTBUF</td>
+<td>4</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspIOBUF</td>
+<td>42</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspELVDS_OBUF</td>
+<td>4</td>
+</tr>
+<tr>
+<td class="label"><b>Register </b></td>
+<td>7052</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFF</td>
+<td>384</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFE</td>
+<td>3708</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFS</td>
+<td>15</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFSE</td>
+<td>441</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFR</td>
+<td>345</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFRE</td>
+<td>1886</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFP</td>
+<td>12</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFPE</td>
+<td>19</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFC</td>
+<td>75</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFCE</td>
+<td>148</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFNE</td>
+<td>15</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFNRE</td>
+<td>1</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDFFNC</td>
+<td>3</td>
+</tr>
+<tr>
+<td class="label"><b>LUT </b></td>
+<td>16181</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspLUT2</td>
+<td>1672</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspLUT3</td>
+<td>4950</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspLUT4</td>
+<td>9559</td>
+</tr>
+<tr>
+<td class="label"><b>ALU </b></td>
+<td>1516</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspALU</td>
+<td>1516</td>
+</tr>
+<tr>
+<td class="label"><b>SSRAM </b></td>
+<td>66</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspRAM16S1</td>
+<td>1</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspRAM16S4</td>
+<td>21</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspRAM16SDP1</td>
+<td>1</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspRAM16SDP4</td>
+<td>43</td>
+</tr>
+<tr>
+<td class="label"><b>INV </b></td>
+<td>87</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspINV</td>
+<td>87</td>
+</tr>
+<tr>
+<td class="label"><b>IOLOGIC </b></td>
+<td>3</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspOSER10</td>
+<td>3</td>
+</tr>
+<tr>
+<td class="label"><b>DSP </b></td>
+<td></td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspMULT9X9</td>
+<td>1</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspMULT18X18</td>
+<td>4</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspMULT36X36</td>
+<td>1</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspMULTALU36X18</td>
+<td>1</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspMULTADDALU18X18</td>
+<td>4</td>
+</tr>
+<tr>
+<td class="label"><b>BSRAM </b></td>
+<td>31</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspSP</td>
+<td>1</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspSDPB</td>
+<td>12</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspDPB</td>
+<td>17</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsppROM</td>
+<td>1</td>
+</tr>
+<tr>
+<td class="label"><b>CLOCK </b></td>
+<td>3</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbspCLKDIV</td>
+<td>1</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp&nbsp&nbsprPLL</td>
+<td>2</td>
+</tr>
+</table>
+<h2><a name="utilization">Resource Utilization Summary</a></h2>
+<table class="summary_table">
+<tr>
+<td class="label"><b>Resource</b></td>
+<td><b>Usage</b></td>
+<td><b>Utilization</b></td>
+</tr>
+<tr>
+<td class="label">Logic</td>
+<td>18180(16268 LUT, 1516 ALU, 66 RAM16) / 20736</td>
+<td>88%</td>
+</tr>
+<tr>
+<td class="label">Register</td>
+<td>7052 / 15915</td>
+<td>45%</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp--Register as Latch</td>
+<td>0 / 15915</td>
+<td>0%</td>
+</tr>
+<tr>
+<td class="label">&nbsp&nbsp--Register as FF</td>
+<td>7052 / 15915</td>
+<td>45%</td>
+</tr>
+<tr>
+<td class="label">BSRAM</td>
+<td>31 / 46</td>
+<td>68%</td>
+</tr>
+</table>
+<h1><a name="timing">Timing</a></h1>
+<h2><a name="clock">Clock Summary:</a></h2>
+<table class="summary_table">
+<tr>
+<th>NO.</th>
+<th>Clock Name</th>
+<th>Type</th>
+<th>Period</th>
+<th>Frequency(MHz)</th>
+<th>Rise</th>
+<th>Fall</th>
+<th>Source</th>
+<th>Master</th>
+<th>Object</th>
+</tr>
+<tr>
+<td>1</td>
+<td>clk</td>
+<td>Base</td>
+<td>37.037</td>
+<td>27.000</td>
+<td>0.000</td>
+<td>18.519</td>
+<td> </td>
+<td> </td>
+<td>clk_ibuf/I </td>
+</tr>
+<tr>
+<td>2</td>
+<td>mcu/n4_24</td>
+<td>Base</td>
+<td>10.000</td>
+<td>100.000</td>
+<td>0.000</td>
+<td>5.000</td>
+<td> </td>
+<td> </td>
+<td>mcu/n4_s1/F </td>
+</tr>
+<tr>
+<td>3</td>
+<td>clk_audio</td>
+<td>Base</td>
+<td>10.000</td>
+<td>100.000</td>
+<td>0.000</td>
+<td>5.000</td>
+<td> </td>
+<td> </td>
+<td>clk_audio_s0/Q </td>
+</tr>
+<tr>
+<td>4</td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk</td>
+<td>Generated</td>
+<td>11.696</td>
+<td>85.500</td>
+<td>0.000</td>
+<td>5.848</td>
+<td>clk_ibuf/I</td>
+<td>clk</td>
+<td>amigaclks/sysclk_inst/CLKOUT </td>
+</tr>
+<tr>
+<td>5</td>
+<td>amigaclks/sysclk_inst/CLKOUTP.default_gen_clk</td>
+<td>Generated</td>
+<td>11.696</td>
+<td>85.500</td>
+<td>8.772</td>
+<td>2.924</td>
+<td>clk_ibuf/I</td>
+<td>clk</td>
+<td>amigaclks/sysclk_inst/CLKOUTP </td>
+</tr>
+<tr>
+<td>6</td>
+<td>amigaclks/sysclk_inst/CLKOUTD.default_gen_clk</td>
+<td>Generated</td>
+<td>140.351</td>
+<td>7.125</td>
+<td>0.000</td>
+<td>70.175</td>
+<td>clk_ibuf/I</td>
+<td>clk</td>
+<td>amigaclks/sysclk_inst/CLKOUTD </td>
+</tr>
+<tr>
+<td>7</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk</td>
+<td>Generated</td>
+<td>35.088</td>
+<td>28.500</td>
+<td>0.000</td>
+<td>17.544</td>
+<td>clk_ibuf/I</td>
+<td>clk</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3 </td>
+</tr>
+<tr>
+<td>8</td>
+<td>amigaclks/tmdsclk_inst/CLKOUT.default_gen_clk</td>
+<td>Generated</td>
+<td>7.018</td>
+<td>142.500</td>
+<td>0.000</td>
+<td>3.509</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk</td>
+<td>amigaclks/tmdsclk_inst/CLKOUT </td>
+</tr>
+<tr>
+<td>9</td>
+<td>amigaclks/tmdsclk_inst/CLKOUTP.default_gen_clk</td>
+<td>Generated</td>
+<td>7.018</td>
+<td>142.500</td>
+<td>0.000</td>
+<td>3.509</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk</td>
+<td>amigaclks/tmdsclk_inst/CLKOUTP </td>
+</tr>
+<tr>
+<td>10</td>
+<td>amigaclks/tmdsclk_inst/CLKOUTD.default_gen_clk</td>
+<td>Generated</td>
+<td>14.035</td>
+<td>71.250</td>
+<td>0.000</td>
+<td>7.018</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk</td>
+<td>amigaclks/tmdsclk_inst/CLKOUTD </td>
+</tr>
+<tr>
+<td>11</td>
+<td>amigaclks/tmdsclk_inst/CLKOUTD3.default_gen_clk</td>
+<td>Generated</td>
+<td>21.053</td>
+<td>47.500</td>
+<td>0.000</td>
+<td>10.526</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk</td>
+<td>amigaclks/tmdsclk_inst/CLKOUTD3 </td>
+</tr>
+<tr>
+<td>12</td>
+<td>amigaclks/clkdiv_inst/CLKOUT.default_gen_clk</td>
+<td>Generated</td>
+<td>35.088</td>
+<td>28.500</td>
+<td>0.000</td>
+<td>17.544</td>
+<td>amigaclks/tmdsclk_inst/CLKOUT</td>
+<td>amigaclks/tmdsclk_inst/CLKOUT.default_gen_clk</td>
+<td>amigaclks/clkdiv_inst/CLKOUT </td>
+</tr>
+</table>
+<h2><a name="performance">Max Frequency Summary:</a></h2>
+<table class="summary_table">
+<tr>
+<th>NO.</th>
+<th>Clock Name</th>
+<th>Constraint</th>
+<th>Actual Fmax</th>
+<th>Logic Level</th>
+<th>Entity</th>
+</tr>
+<tr>
+<td>1</td>
+<td>mcu/n4_24</td>
+<td>100.000(MHz)</td>
+<td>182.882(MHz)</td>
+<td>2</td>
+<td>TOP</td>
+</tr>
+<tr>
+<td>2</td>
+<td>clk_audio</td>
+<td>100.000(MHz)</td>
+<td>373.274(MHz)</td>
+<td>3</td>
+<td>TOP</td>
+</tr>
+<tr>
+<td>3</td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk</td>
+<td>85.500(MHz)</td>
+<td>65.604(MHz)</td>
+<td>17</td>
+<td>TOP</td>
+</tr>
+<tr>
+<td>4</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk</td>
+<td>28.500(MHz)</td>
+<td>27.468(MHz)</td>
+<td>39</td>
+<td>TOP</td>
+</tr>
+<tr>
+<td>5</td>
+<td>amigaclks/clkdiv_inst/CLKOUT.default_gen_clk</td>
+<td>28.500(MHz)</td>
+<td>86.162(MHz)</td>
+<td>13</td>
+<td>TOP</td>
+</tr>
+</table>
+<h2><a name="detail timing">Detail Timing Paths Information</a></h2>
+<h3>Path&nbsp1</h3>
+<b>Path Summary:</b></br>
+<table class="summary_table">
+<tr>
+<td class="label">Slack</td>
+<td>-12.588</td>
+</tr>
+<tr>
+<td class="label">Data Arrival Time</td>
+<td>24.934</td>
+</tr>
+<tr>
+<td class="label">Data Required Time</td>
+<td>12.346</td>
+</tr>
+<tr>
+<td class="label">From</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0</td>
+</tr>
+<tr>
+<td class="label">To</td>
+<td>sdram/sd_addr_9_s1</td>
+</tr>
+<tr>
+<td class="label">Launch Clk</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk[R]</td>
+</tr>
+<tr>
+<td class="label">Latch Clk</td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk[R]</td>
+</tr>
+</table>
+<b>Data Arrival Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>0.000</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>0.000</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk</td>
+</tr>
+<tr>
+<td>0.360</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>6151</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3</td>
+</tr>
+<tr>
+<td>0.720</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0/CLK</td>
+</tr>
+<tr>
+<td>0.952</td>
+<td>0.232</td>
+<td>tC2Q</td>
+<td>RF</td>
+<td>97</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0/Q</td>
+</tr>
+<tr>
+<td>1.426</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbstop_1_s2/I1</td>
+</tr>
+<tr>
+<td>1.981</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbstop_1_s2/F</td>
+</tr>
+<tr>
+<td>2.455</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s13/I1</td>
+</tr>
+<tr>
+<td>3.010</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s13/F</td>
+</tr>
+<tr>
+<td>3.484</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s12/I2</td>
+</tr>
+<tr>
+<td>3.937</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s12/F</td>
+</tr>
+<tr>
+<td>4.411</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s11/I0</td>
+</tr>
+<tr>
+<td>4.928</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s11/F</td>
+</tr>
+<tr>
+<td>5.402</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s10/I2</td>
+</tr>
+<tr>
+<td>5.855</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s10/F</td>
+</tr>
+<tr>
+<td>6.329</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s9/I0</td>
+</tr>
+<tr>
+<td>6.846</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s9/F</td>
+</tr>
+<tr>
+<td>7.320</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s8/I2</td>
+</tr>
+<tr>
+<td>7.773</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s8/F</td>
+</tr>
+<tr>
+<td>8.247</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s6/I0</td>
+</tr>
+<tr>
+<td>8.764</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s6/F</td>
+</tr>
+<tr>
+<td>9.238</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s2/I2</td>
+</tr>
+<tr>
+<td>9.691</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s2/F</td>
+</tr>
+<tr>
+<td>10.165</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s0/I0</td>
+</tr>
+<tr>
+<td>10.682</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>3</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s0/F</td>
+</tr>
+<tr>
+<td>11.156</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/spr1/pcsel_0_s7/I0</td>
+</tr>
+<tr>
+<td>11.673</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>12</td>
+<td>nanomig/minimig/AGNUS1/spr1/pcsel_0_s7/F</td>
+</tr>
+<tr>
+<td>12.147</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/cpu_data_in_0_s46/I0</td>
+</tr>
+<tr>
+<td>12.664</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>10</td>
+<td>nanomig/minimig/cpu_data_in_0_s46/F</td>
+</tr>
+<tr>
+<td>13.138</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/n2077_s1/I0</td>
+</tr>
+<tr>
+<td>13.655</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>11</td>
+<td>nanomig/minimig/AGNUS1/bl1/n2077_s1/F</td>
+</tr>
+<tr>
+<td>14.129</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_in_20_s2/I3</td>
+</tr>
+<tr>
+<td>14.500</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>26</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_in_20_s2/F</td>
+</tr>
+<tr>
+<td>14.974</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_sel_0_s2/I2</td>
+</tr>
+<tr>
+<td>15.427</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>6</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_sel_0_s2/F</td>
+</tr>
+<tr>
+<td>15.901</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>4</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltpth_bltpth_0_1_s/AD[0]</td>
+</tr>
+<tr>
+<td>16.418</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltpth_bltpth_0_1_s/DO[0]</td>
+</tr>
+<tr>
+<td>16.892</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s19/I0</td>
+</tr>
+<tr>
+<td>17.409</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s19/F</td>
+</tr>
+<tr>
+<td>17.883</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s17/I1</td>
+</tr>
+<tr>
+<td>18.438</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s17/F</td>
+</tr>
+<tr>
+<td>18.912</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s15/I0</td>
+</tr>
+<tr>
+<td>19.429</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s15/F</td>
+</tr>
+<tr>
+<td>19.903</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s12/I1</td>
+</tr>
+<tr>
+<td>20.458</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s12/F</td>
+</tr>
+<tr>
+<td>20.932</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s8/I0</td>
+</tr>
+<tr>
+<td>21.449</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>sdram/n769_s8/F</td>
+</tr>
+<tr>
+<td>21.923</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s6/I0</td>
+</tr>
+<tr>
+<td>22.440</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s6/F</td>
+</tr>
+<tr>
+<td>22.914</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s2/I1</td>
+</tr>
+<tr>
+<td>23.469</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s2/F</td>
+</tr>
+<tr>
+<td>23.943</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s1/I0</td>
+</tr>
+<tr>
+<td>24.460</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s1/F</td>
+</tr>
+<tr>
+<td>24.934</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/sd_addr_9_s1/D</td>
+</tr>
+</table>
+<b>Data Required Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>11.696</td>
+<td>11.696</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>11.696</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk</td>
+</tr>
+<tr>
+<td>12.056</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>288</td>
+<td>amigaclks/sysclk_inst/CLKOUT</td>
+</tr>
+<tr>
+<td>12.416</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>sdram/sd_addr_9_s1/CLK</td>
+</tr>
+<tr>
+<td>12.381</td>
+<td>-0.035</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>sdram/sd_addr_9_s1</td>
+</tr>
+<tr>
+<td>12.346</td>
+<td>-0.035</td>
+<td>tSu</td>
+<td> </td>
+<td>1</td>
+<td>sdram/sd_addr_9_s1</td>
+</tr>
+</table>
+<b>Path Statistics:</b>
+<table class="summary_table">
+<tr>
+<td class="label">Clock Skew:</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td class="label">Setup Relationship:</td>
+<td>11.696</td>
+</tr>
+<tr>
+<td class="label">Logic Level:</td>
+<td>25</td>
+</tr>
+<tr>
+<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
+<tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 12.132, 50.103%; route: 11.850, 48.939%; tC2Q: 0.232, 0.958%</td></tr>
+<tr>
+<td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
+</table>
+<br/>
+<h3>Path&nbsp2</h3>
+<b>Path Summary:</b></br>
+<table class="summary_table">
+<tr>
+<td class="label">Slack</td>
+<td>-12.588</td>
+</tr>
+<tr>
+<td class="label">Data Arrival Time</td>
+<td>24.934</td>
+</tr>
+<tr>
+<td class="label">Data Required Time</td>
+<td>12.346</td>
+</tr>
+<tr>
+<td class="label">From</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0</td>
+</tr>
+<tr>
+<td class="label">To</td>
+<td>sdram/sd_addr_10_s1</td>
+</tr>
+<tr>
+<td class="label">Launch Clk</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk[R]</td>
+</tr>
+<tr>
+<td class="label">Latch Clk</td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk[R]</td>
+</tr>
+</table>
+<b>Data Arrival Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>0.000</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>0.000</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk</td>
+</tr>
+<tr>
+<td>0.360</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>6151</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3</td>
+</tr>
+<tr>
+<td>0.720</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0/CLK</td>
+</tr>
+<tr>
+<td>0.952</td>
+<td>0.232</td>
+<td>tC2Q</td>
+<td>RF</td>
+<td>97</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0/Q</td>
+</tr>
+<tr>
+<td>1.426</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbstop_1_s2/I1</td>
+</tr>
+<tr>
+<td>1.981</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbstop_1_s2/F</td>
+</tr>
+<tr>
+<td>2.455</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s13/I1</td>
+</tr>
+<tr>
+<td>3.010</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s13/F</td>
+</tr>
+<tr>
+<td>3.484</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s12/I2</td>
+</tr>
+<tr>
+<td>3.937</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s12/F</td>
+</tr>
+<tr>
+<td>4.411</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s11/I0</td>
+</tr>
+<tr>
+<td>4.928</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s11/F</td>
+</tr>
+<tr>
+<td>5.402</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s10/I2</td>
+</tr>
+<tr>
+<td>5.855</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s10/F</td>
+</tr>
+<tr>
+<td>6.329</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s9/I0</td>
+</tr>
+<tr>
+<td>6.846</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s9/F</td>
+</tr>
+<tr>
+<td>7.320</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s8/I2</td>
+</tr>
+<tr>
+<td>7.773</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s8/F</td>
+</tr>
+<tr>
+<td>8.247</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s6/I0</td>
+</tr>
+<tr>
+<td>8.764</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s6/F</td>
+</tr>
+<tr>
+<td>9.238</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s2/I2</td>
+</tr>
+<tr>
+<td>9.691</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s2/F</td>
+</tr>
+<tr>
+<td>10.165</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s0/I0</td>
+</tr>
+<tr>
+<td>10.682</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>3</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s0/F</td>
+</tr>
+<tr>
+<td>11.156</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/spr1/pcsel_0_s7/I0</td>
+</tr>
+<tr>
+<td>11.673</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>12</td>
+<td>nanomig/minimig/AGNUS1/spr1/pcsel_0_s7/F</td>
+</tr>
+<tr>
+<td>12.147</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/cpu_data_in_0_s46/I0</td>
+</tr>
+<tr>
+<td>12.664</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>10</td>
+<td>nanomig/minimig/cpu_data_in_0_s46/F</td>
+</tr>
+<tr>
+<td>13.138</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/n2077_s1/I0</td>
+</tr>
+<tr>
+<td>13.655</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>11</td>
+<td>nanomig/minimig/AGNUS1/bl1/n2077_s1/F</td>
+</tr>
+<tr>
+<td>14.129</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_in_20_s2/I3</td>
+</tr>
+<tr>
+<td>14.500</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>26</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_in_20_s2/F</td>
+</tr>
+<tr>
+<td>14.974</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_sel_0_s2/I2</td>
+</tr>
+<tr>
+<td>15.427</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>6</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_sel_0_s2/F</td>
+</tr>
+<tr>
+<td>15.901</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>4</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltpth_bltpth_0_0_s/AD[0]</td>
+</tr>
+<tr>
+<td>16.418</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>3</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltpth_bltpth_0_0_s/DO[3]</td>
+</tr>
+<tr>
+<td>16.892</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s20/I0</td>
+</tr>
+<tr>
+<td>17.409</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s20/F</td>
+</tr>
+<tr>
+<td>17.883</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s18/I1</td>
+</tr>
+<tr>
+<td>18.438</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s18/F</td>
+</tr>
+<tr>
+<td>18.912</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s16/I0</td>
+</tr>
+<tr>
+<td>19.429</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s16/F</td>
+</tr>
+<tr>
+<td>19.903</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s13/I1</td>
+</tr>
+<tr>
+<td>20.458</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s13/F</td>
+</tr>
+<tr>
+<td>20.932</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n769_s9/I0</td>
+</tr>
+<tr>
+<td>21.449</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>sdram/n769_s9/F</td>
+</tr>
+<tr>
+<td>21.923</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n873_s9/I0</td>
+</tr>
+<tr>
+<td>22.440</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n873_s9/F</td>
+</tr>
+<tr>
+<td>22.914</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n873_s5/I1</td>
+</tr>
+<tr>
+<td>23.469</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n873_s5/F</td>
+</tr>
+<tr>
+<td>23.943</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n873_s4/I0</td>
+</tr>
+<tr>
+<td>24.460</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n873_s4/F</td>
+</tr>
+<tr>
+<td>24.934</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/sd_addr_10_s1/D</td>
+</tr>
+</table>
+<b>Data Required Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>11.696</td>
+<td>11.696</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>11.696</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk</td>
+</tr>
+<tr>
+<td>12.056</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>288</td>
+<td>amigaclks/sysclk_inst/CLKOUT</td>
+</tr>
+<tr>
+<td>12.416</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>sdram/sd_addr_10_s1/CLK</td>
+</tr>
+<tr>
+<td>12.381</td>
+<td>-0.035</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>sdram/sd_addr_10_s1</td>
+</tr>
+<tr>
+<td>12.346</td>
+<td>-0.035</td>
+<td>tSu</td>
+<td> </td>
+<td>1</td>
+<td>sdram/sd_addr_10_s1</td>
+</tr>
+</table>
+<b>Path Statistics:</b>
+<table class="summary_table">
+<tr>
+<td class="label">Clock Skew:</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td class="label">Setup Relationship:</td>
+<td>11.696</td>
+</tr>
+<tr>
+<td class="label">Logic Level:</td>
+<td>25</td>
+</tr>
+<tr>
+<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
+<tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 12.132, 50.103%; route: 11.850, 48.939%; tC2Q: 0.232, 0.958%</td></tr>
+<tr>
+<td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
+</table>
+<br/>
+<h3>Path&nbsp3</h3>
+<b>Path Summary:</b></br>
+<table class="summary_table">
+<tr>
+<td class="label">Slack</td>
+<td>-9.513</td>
+</tr>
+<tr>
+<td class="label">Data Arrival Time</td>
+<td>21.859</td>
+</tr>
+<tr>
+<td class="label">Data Required Time</td>
+<td>12.346</td>
+</tr>
+<tr>
+<td class="label">From</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0</td>
+</tr>
+<tr>
+<td class="label">To</td>
+<td>sdram/sd_addr_0_s1</td>
+</tr>
+<tr>
+<td class="label">Launch Clk</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk[R]</td>
+</tr>
+<tr>
+<td class="label">Latch Clk</td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk[R]</td>
+</tr>
+</table>
+<b>Data Arrival Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>0.000</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>0.000</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk</td>
+</tr>
+<tr>
+<td>0.360</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>6151</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3</td>
+</tr>
+<tr>
+<td>0.720</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0/CLK</td>
+</tr>
+<tr>
+<td>0.952</td>
+<td>0.232</td>
+<td>tC2Q</td>
+<td>RF</td>
+<td>97</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0/Q</td>
+</tr>
+<tr>
+<td>1.426</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbstop_1_s2/I1</td>
+</tr>
+<tr>
+<td>1.981</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbstop_1_s2/F</td>
+</tr>
+<tr>
+<td>2.455</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s13/I1</td>
+</tr>
+<tr>
+<td>3.010</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s13/F</td>
+</tr>
+<tr>
+<td>3.484</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s12/I2</td>
+</tr>
+<tr>
+<td>3.937</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s12/F</td>
+</tr>
+<tr>
+<td>4.411</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s11/I0</td>
+</tr>
+<tr>
+<td>4.928</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s11/F</td>
+</tr>
+<tr>
+<td>5.402</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s10/I2</td>
+</tr>
+<tr>
+<td>5.855</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s10/F</td>
+</tr>
+<tr>
+<td>6.329</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s9/I0</td>
+</tr>
+<tr>
+<td>6.846</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s9/F</td>
+</tr>
+<tr>
+<td>7.320</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s8/I2</td>
+</tr>
+<tr>
+<td>7.773</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s8/F</td>
+</tr>
+<tr>
+<td>8.247</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s6/I0</td>
+</tr>
+<tr>
+<td>8.764</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s6/F</td>
+</tr>
+<tr>
+<td>9.238</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s2/I2</td>
+</tr>
+<tr>
+<td>9.691</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s2/F</td>
+</tr>
+<tr>
+<td>10.165</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s0/I0</td>
+</tr>
+<tr>
+<td>10.682</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>3</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s0/F</td>
+</tr>
+<tr>
+<td>11.156</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/spr1/pcsel_0_s7/I0</td>
+</tr>
+<tr>
+<td>11.673</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>12</td>
+<td>nanomig/minimig/AGNUS1/spr1/pcsel_0_s7/F</td>
+</tr>
+<tr>
+<td>12.147</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/cpu_data_in_0_s46/I0</td>
+</tr>
+<tr>
+<td>12.664</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>10</td>
+<td>nanomig/minimig/cpu_data_in_0_s46/F</td>
+</tr>
+<tr>
+<td>13.138</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/n2077_s1/I0</td>
+</tr>
+<tr>
+<td>13.655</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>11</td>
+<td>nanomig/minimig/AGNUS1/bl1/n2077_s1/F</td>
+</tr>
+<tr>
+<td>14.129</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_in_20_s2/I3</td>
+</tr>
+<tr>
+<td>14.500</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>26</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_in_20_s2/F</td>
+</tr>
+<tr>
+<td>14.974</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_sel_0_s2/I2</td>
+</tr>
+<tr>
+<td>15.427</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>6</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_sel_0_s2/F</td>
+</tr>
+<tr>
+<td>15.901</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>4</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptl_bltptl_0_2_s/AD[0]</td>
+</tr>
+<tr>
+<td>16.418</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>4</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptl_bltptl_0_2_s/DO[1]</td>
+</tr>
+<tr>
+<td>16.892</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n778_s14/I0</td>
+</tr>
+<tr>
+<td>17.409</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n778_s14/F</td>
+</tr>
+<tr>
+<td>17.883</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n778_s10/I1</td>
+</tr>
+<tr>
+<td>18.438</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n778_s10/F</td>
+</tr>
+<tr>
+<td>18.912</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n778_s6/I2</td>
+</tr>
+<tr>
+<td>19.365</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n778_s6/F</td>
+</tr>
+<tr>
+<td>19.839</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n778_s3/I0</td>
+</tr>
+<tr>
+<td>20.356</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n778_s3/F</td>
+</tr>
+<tr>
+<td>20.830</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n778_s1/I1</td>
+</tr>
+<tr>
+<td>21.385</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n778_s1/F</td>
+</tr>
+<tr>
+<td>21.859</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/sd_addr_0_s1/D</td>
+</tr>
+</table>
+<b>Data Required Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>11.696</td>
+<td>11.696</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>11.696</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk</td>
+</tr>
+<tr>
+<td>12.056</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>288</td>
+<td>amigaclks/sysclk_inst/CLKOUT</td>
+</tr>
+<tr>
+<td>12.416</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>sdram/sd_addr_0_s1/CLK</td>
+</tr>
+<tr>
+<td>12.381</td>
+<td>-0.035</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>sdram/sd_addr_0_s1</td>
+</tr>
+<tr>
+<td>12.346</td>
+<td>-0.035</td>
+<td>tSu</td>
+<td> </td>
+<td>1</td>
+<td>sdram/sd_addr_0_s1</td>
+</tr>
+</table>
+<b>Path Statistics:</b>
+<table class="summary_table">
+<tr>
+<td class="label">Clock Skew:</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td class="label">Setup Relationship:</td>
+<td>11.696</td>
+</tr>
+<tr>
+<td class="label">Logic Level:</td>
+<td>22</td>
+</tr>
+<tr>
+<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
+<tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 10.479, 49.572%; route: 10.428, 49.331%; tC2Q: 0.232, 1.097%</td></tr>
+<tr>
+<td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
+</table>
+<br/>
+<h3>Path&nbsp4</h3>
+<b>Path Summary:</b></br>
+<table class="summary_table">
+<tr>
+<td class="label">Slack</td>
+<td>-9.513</td>
+</tr>
+<tr>
+<td class="label">Data Arrival Time</td>
+<td>21.859</td>
+</tr>
+<tr>
+<td class="label">Data Required Time</td>
+<td>12.346</td>
+</tr>
+<tr>
+<td class="label">From</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0</td>
+</tr>
+<tr>
+<td class="label">To</td>
+<td>sdram/sd_addr_1_s1</td>
+</tr>
+<tr>
+<td class="label">Launch Clk</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk[R]</td>
+</tr>
+<tr>
+<td class="label">Latch Clk</td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk[R]</td>
+</tr>
+</table>
+<b>Data Arrival Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>0.000</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>0.000</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk</td>
+</tr>
+<tr>
+<td>0.360</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>6151</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3</td>
+</tr>
+<tr>
+<td>0.720</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0/CLK</td>
+</tr>
+<tr>
+<td>0.952</td>
+<td>0.232</td>
+<td>tC2Q</td>
+<td>RF</td>
+<td>97</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0/Q</td>
+</tr>
+<tr>
+<td>1.426</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbstop_1_s2/I1</td>
+</tr>
+<tr>
+<td>1.981</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbstop_1_s2/F</td>
+</tr>
+<tr>
+<td>2.455</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s13/I1</td>
+</tr>
+<tr>
+<td>3.010</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s13/F</td>
+</tr>
+<tr>
+<td>3.484</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s12/I2</td>
+</tr>
+<tr>
+<td>3.937</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s12/F</td>
+</tr>
+<tr>
+<td>4.411</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s11/I0</td>
+</tr>
+<tr>
+<td>4.928</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s11/F</td>
+</tr>
+<tr>
+<td>5.402</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s10/I2</td>
+</tr>
+<tr>
+<td>5.855</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s10/F</td>
+</tr>
+<tr>
+<td>6.329</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s9/I0</td>
+</tr>
+<tr>
+<td>6.846</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s9/F</td>
+</tr>
+<tr>
+<td>7.320</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s8/I2</td>
+</tr>
+<tr>
+<td>7.773</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s8/F</td>
+</tr>
+<tr>
+<td>8.247</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s6/I0</td>
+</tr>
+<tr>
+<td>8.764</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s6/F</td>
+</tr>
+<tr>
+<td>9.238</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s2/I2</td>
+</tr>
+<tr>
+<td>9.691</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s2/F</td>
+</tr>
+<tr>
+<td>10.165</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s0/I0</td>
+</tr>
+<tr>
+<td>10.682</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>3</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s0/F</td>
+</tr>
+<tr>
+<td>11.156</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/spr1/pcsel_0_s7/I0</td>
+</tr>
+<tr>
+<td>11.673</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>12</td>
+<td>nanomig/minimig/AGNUS1/spr1/pcsel_0_s7/F</td>
+</tr>
+<tr>
+<td>12.147</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/cpu_data_in_0_s46/I0</td>
+</tr>
+<tr>
+<td>12.664</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>10</td>
+<td>nanomig/minimig/cpu_data_in_0_s46/F</td>
+</tr>
+<tr>
+<td>13.138</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/n2077_s1/I0</td>
+</tr>
+<tr>
+<td>13.655</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>11</td>
+<td>nanomig/minimig/AGNUS1/bl1/n2077_s1/F</td>
+</tr>
+<tr>
+<td>14.129</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_in_20_s2/I3</td>
+</tr>
+<tr>
+<td>14.500</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>26</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_in_20_s2/F</td>
+</tr>
+<tr>
+<td>14.974</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_sel_0_s2/I2</td>
+</tr>
+<tr>
+<td>15.427</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>6</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_sel_0_s2/F</td>
+</tr>
+<tr>
+<td>15.901</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>4</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptl_bltptl_0_2_s/AD[0]</td>
+</tr>
+<tr>
+<td>16.418</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>6</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptl_bltptl_0_2_s/DO[2]</td>
+</tr>
+<tr>
+<td>16.892</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n777_s14/I0</td>
+</tr>
+<tr>
+<td>17.409</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n777_s14/F</td>
+</tr>
+<tr>
+<td>17.883</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n777_s10/I1</td>
+</tr>
+<tr>
+<td>18.438</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n777_s10/F</td>
+</tr>
+<tr>
+<td>18.912</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n777_s6/I2</td>
+</tr>
+<tr>
+<td>19.365</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n777_s6/F</td>
+</tr>
+<tr>
+<td>19.839</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n777_s3/I0</td>
+</tr>
+<tr>
+<td>20.356</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n777_s3/F</td>
+</tr>
+<tr>
+<td>20.830</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n777_s1/I1</td>
+</tr>
+<tr>
+<td>21.385</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n777_s1/F</td>
+</tr>
+<tr>
+<td>21.859</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/sd_addr_1_s1/D</td>
+</tr>
+</table>
+<b>Data Required Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>11.696</td>
+<td>11.696</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>11.696</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk</td>
+</tr>
+<tr>
+<td>12.056</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>288</td>
+<td>amigaclks/sysclk_inst/CLKOUT</td>
+</tr>
+<tr>
+<td>12.416</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>sdram/sd_addr_1_s1/CLK</td>
+</tr>
+<tr>
+<td>12.381</td>
+<td>-0.035</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>sdram/sd_addr_1_s1</td>
+</tr>
+<tr>
+<td>12.346</td>
+<td>-0.035</td>
+<td>tSu</td>
+<td> </td>
+<td>1</td>
+<td>sdram/sd_addr_1_s1</td>
+</tr>
+</table>
+<b>Path Statistics:</b>
+<table class="summary_table">
+<tr>
+<td class="label">Clock Skew:</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td class="label">Setup Relationship:</td>
+<td>11.696</td>
+</tr>
+<tr>
+<td class="label">Logic Level:</td>
+<td>22</td>
+</tr>
+<tr>
+<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
+<tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 10.479, 49.572%; route: 10.428, 49.331%; tC2Q: 0.232, 1.097%</td></tr>
+<tr>
+<td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
+</table>
+<br/>
+<h3>Path&nbsp5</h3>
+<b>Path Summary:</b></br>
+<table class="summary_table">
+<tr>
+<td class="label">Slack</td>
+<td>-9.513</td>
+</tr>
+<tr>
+<td class="label">Data Arrival Time</td>
+<td>21.859</td>
+</tr>
+<tr>
+<td class="label">Data Required Time</td>
+<td>12.346</td>
+</tr>
+<tr>
+<td class="label">From</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0</td>
+</tr>
+<tr>
+<td class="label">To</td>
+<td>sdram/sd_addr_2_s1</td>
+</tr>
+<tr>
+<td class="label">Launch Clk</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk[R]</td>
+</tr>
+<tr>
+<td class="label">Latch Clk</td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk[R]</td>
+</tr>
+</table>
+<b>Data Arrival Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>0.000</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>0.000</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>amigaclks/sysclk_inst/CLKOUTD3.default_gen_clk</td>
+</tr>
+<tr>
+<td>0.360</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>6151</td>
+<td>amigaclks/sysclk_inst/CLKOUTD3</td>
+</tr>
+<tr>
+<td>0.720</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0/CLK</td>
+</tr>
+<tr>
+<td>0.952</td>
+<td>0.232</td>
+<td>tC2Q</td>
+<td>RF</td>
+<td>97</td>
+<td>nanomig/minimig/AGNUS1/bc1/beamcon0_reg_7_s0/Q</td>
+</tr>
+<tr>
+<td>1.426</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbstop_1_s2/I1</td>
+</tr>
+<tr>
+<td>1.981</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>2</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbstop_1_s2/F</td>
+</tr>
+<tr>
+<td>2.455</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s13/I1</td>
+</tr>
+<tr>
+<td>3.010</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s13/F</td>
+</tr>
+<tr>
+<td>3.484</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s12/I2</td>
+</tr>
+<tr>
+<td>3.937</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s12/F</td>
+</tr>
+<tr>
+<td>4.411</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s11/I0</td>
+</tr>
+<tr>
+<td>4.928</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s11/F</td>
+</tr>
+<tr>
+<td>5.402</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s10/I2</td>
+</tr>
+<tr>
+<td>5.855</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s10/F</td>
+</tr>
+<tr>
+<td>6.329</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s9/I0</td>
+</tr>
+<tr>
+<td>6.846</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s9/F</td>
+</tr>
+<tr>
+<td>7.320</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s8/I2</td>
+</tr>
+<tr>
+<td>7.773</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s8/F</td>
+</tr>
+<tr>
+<td>8.247</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s6/I0</td>
+</tr>
+<tr>
+<td>8.764</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s6/F</td>
+</tr>
+<tr>
+<td>9.238</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s2/I2</td>
+</tr>
+<tr>
+<td>9.691</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s2/F</td>
+</tr>
+<tr>
+<td>10.165</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s0/I0</td>
+</tr>
+<tr>
+<td>10.682</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>3</td>
+<td>nanomig/minimig/AGNUS1/bc1/vbl_Z_s0/F</td>
+</tr>
+<tr>
+<td>11.156</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/spr1/pcsel_0_s7/I0</td>
+</tr>
+<tr>
+<td>11.673</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>12</td>
+<td>nanomig/minimig/AGNUS1/spr1/pcsel_0_s7/F</td>
+</tr>
+<tr>
+<td>12.147</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/cpu_data_in_0_s46/I0</td>
+</tr>
+<tr>
+<td>12.664</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>10</td>
+<td>nanomig/minimig/cpu_data_in_0_s46/F</td>
+</tr>
+<tr>
+<td>13.138</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/n2077_s1/I0</td>
+</tr>
+<tr>
+<td>13.655</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>11</td>
+<td>nanomig/minimig/AGNUS1/bl1/n2077_s1/F</td>
+</tr>
+<tr>
+<td>14.129</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_in_20_s2/I3</td>
+</tr>
+<tr>
+<td>14.500</td>
+<td>0.371</td>
+<td>tINS</td>
+<td>FF</td>
+<td>26</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_in_20_s2/F</td>
+</tr>
+<tr>
+<td>14.974</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_sel_0_s2/I2</td>
+</tr>
+<tr>
+<td>15.427</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>6</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptr_sel_0_s2/F</td>
+</tr>
+<tr>
+<td>15.901</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>4</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptl_bltptl_0_2_s/AD[0]</td>
+</tr>
+<tr>
+<td>16.418</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>5</td>
+<td>nanomig/minimig/AGNUS1/bl1/address_generator_1/bltptl_bltptl_0_2_s/DO[3]</td>
+</tr>
+<tr>
+<td>16.892</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n776_s14/I0</td>
+</tr>
+<tr>
+<td>17.409</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n776_s14/F</td>
+</tr>
+<tr>
+<td>17.883</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n776_s10/I1</td>
+</tr>
+<tr>
+<td>18.438</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n776_s10/F</td>
+</tr>
+<tr>
+<td>18.912</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n776_s6/I2</td>
+</tr>
+<tr>
+<td>19.365</td>
+<td>0.453</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n776_s6/F</td>
+</tr>
+<tr>
+<td>19.839</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n776_s3/I0</td>
+</tr>
+<tr>
+<td>20.356</td>
+<td>0.517</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n776_s3/F</td>
+</tr>
+<tr>
+<td>20.830</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n776_s1/I1</td>
+</tr>
+<tr>
+<td>21.385</td>
+<td>0.555</td>
+<td>tINS</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/n776_s1/F</td>
+</tr>
+<tr>
+<td>21.859</td>
+<td>0.474</td>
+<td>tNET</td>
+<td>FF</td>
+<td>1</td>
+<td>sdram/sd_addr_2_s1/D</td>
+</tr>
+</table>
+<b>Data Required Path:</b>
+<table class="summary_table">
+<tr>
+<th>AT</th>
+<th>DELAY</th>
+<th>TYPE</th>
+<th>RF</th>
+<th>FANOUT</th>
+<th>NODE</th>
+</tr>
+<tr>
+<td>11.696</td>
+<td>11.696</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>active clock edge time</td>
+</tr>
+<tr>
+<td>11.696</td>
+<td>0.000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td>amigaclks/sysclk_inst/CLKOUT.default_gen_clk</td>
+</tr>
+<tr>
+<td>12.056</td>
+<td>0.360</td>
+<td>tCL</td>
+<td>RR</td>
+<td>288</td>
+<td>amigaclks/sysclk_inst/CLKOUT</td>
+</tr>
+<tr>
+<td>12.416</td>
+<td>0.360</td>
+<td>tNET</td>
+<td>RR</td>
+<td>1</td>
+<td>sdram/sd_addr_2_s1/CLK</td>
+</tr>
+<tr>
+<td>12.381</td>
+<td>-0.035</td>
+<td>tUnc</td>
+<td> </td>
+<td> </td>
+<td>sdram/sd_addr_2_s1</td>
+</tr>
+<tr>
+<td>12.346</td>
+<td>-0.035</td>
+<td>tSu</td>
+<td> </td>
+<td>1</td>
+<td>sdram/sd_addr_2_s1</td>
+</tr>
+</table>
+<b>Path Statistics:</b>
+<table class="summary_table">
+<tr>
+<td class="label">Clock Skew:</td>
+<td>0.000</td>
+</tr>
+<tr>
+<td class="label">Setup Relationship:</td>
+<td>11.696</td>
+</tr>
+<tr>
+<td class="label">Logic Level:</td>
+<td>22</td>
+</tr>
+<tr>
+<td class="label">Arrival Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
+<tr>
+<td class="label">Arrival Data Path Delay:</td><td> cell: 10.479, 49.572%; route: 10.428, 49.331%; tC2Q: 0.232, 1.097%</td></tr>
+<tr>
+<td class="label">Required Clock Path Delay:</td><td> cell: 0.000, 0.000%; route: 0.360, 100.000%</td></tr>
+</table>
+<br/>
+</div><!-- content -->
+</div><!-- main_wrapper -->
+</body>
+</html>

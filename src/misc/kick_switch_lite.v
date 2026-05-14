@@ -18,7 +18,7 @@ module kick_switch_lite (
 
     // Memory ready signals
     input  wire        sdram_ready,
-    input  wire        flash_ready,
+    input  wire        mem_ready,
 
     // OSD kickstart selection
     input  wire [1:0]  osd_kickstart,
@@ -36,32 +36,19 @@ module kick_switch_lite (
 
     // Status
     output wire        rom_done
+    input wire         start_rom_copy
 );
 
-    // ---- Local parameters -----------------------------------------------
-    localparam [5:0]  FLASH_CNT_INIT = 6'd45;      // >= 30 @ 32 MHz, 45 @ 85.5 MHz
-    localparam [21:0] ROM_WORD_COUNT = 22'h40001;
-    localparam [21:0] SDRAM_ROM_BASE = 22'h3C0000;  // = {4'hf, 18'h0}
-
-    // ---- mem_ready ------------------------------------------------------
-    wire mem_ready = sdram_ready && flash_ready && pll_lock;
-
     // ---- start pulse (rising edge of mem_ready) -------------------------
-    reg start_rom_copy;
-    reg mem_ready_D;
-
-    always @(posedge clk or negedge pll_lock) begin
-        if (!pll_lock) begin
-            start_rom_copy <= 1'b0;
-            mem_ready_D    <= 1'b0;
-        end else begin
-            mem_ready_D    <= mem_ready;
-            start_rom_copy <= mem_ready && !mem_ready_D;
-        end
-    end
+    
+    
+    reg [17:0]  flash_ram_addr;   
+    reg         flash_ram_write;
+    reg [5:0]   flash_cnt;  
 
     // ---- Flash base address (combinational) -----------------------------
     reg [21:0] flash_addr_base;
+
     always @(*) begin
         case (osd_kickstart)
             2'b00:   flash_addr_base = 22'h380000; // Kickstart 1.3 @ 7.0 MB
@@ -76,43 +63,36 @@ module kick_switch_lite (
     reg [4:0]  state;
     reg [5:0]  flash_cnt;
     reg [1:0]  osd_kickstartD;
-    reg        restart_rom_copy;
+    reg restart_rom_copy;  
 
-    assign rom_done = (word_count == 22'd0);
+    // once the copy counter has run to zero, all rom has been copied
+    wire		rom_done = (word_count == 0);
+    assign      rom_done = (word_count == 22'd0);
 
     // ---- Main state machine ---------------------------------------------
     always @(posedge clk) begin
-        if (!mem_ready) begin
-            osd_kickstartD  <= osd_kickstart;
-            flash_addr      <= flash_addr_base;
-            flash_ram_addr  <= SDRAM_ROM_BASE;
-            word_count      <= ROM_WORD_COUNT;
-            state           <= 5'd0;
-            flash_ram_write <= 1'b0;
-            flash_cs        <= 1'b0;
-            flash_cnt       <= 6'd0;
-            restart_rom_copy<= 1'b0;
-
-        end else begin
             restart_rom_copy <= 1'b0;
 
-            // detect kickstart selection change from OSD
-            if (osd_kickstart != osd_kickstartD) begin
-                osd_kickstartD   <= osd_kickstart;
-                flash_addr       <= flash_addr_base;
-                flash_ram_addr   <= SDRAM_ROM_BASE;
-                word_count       <= ROM_WORD_COUNT;
-                state            <= 5'd0;
-                flash_ram_write  <= 1'b0;
-                flash_cs         <= 1'b0;
-                flash_cnt        <= 6'd0;
-                restart_rom_copy <= 1'b1;
-            end
+            if (!mem_ready || (osd_kickstart != osd_kickstartD)) begin
+                osd_kickstartD <= osd_kickstart;
+
+                flash_addr      <= flash_addr_base;
+                flash_ram_addr  <= 18'h0;           // write into 512k sdram segment used for kick rom
+                word_count      <= 22'h40001;       // 512k bytes ROM data = 256k words
+                state           <= 5'd0;
+                flash_ram_write <= 1'b0;
+                flash_cs        <= 1'b0;
+                flash_cnt       <= 6'd0;
+
+                if (mem_ready)
+                    restart_rom_copy <= 1'b1;
+                
+            end else begin
 
             // copy ROM from flash to memory
             if ((start_rom_copy || restart_rom_copy || state == 5'd23) && !rom_done) begin
                 flash_cs  <= 1'b1;
-                flash_cnt <= FLASH_CNT_INIT;
+                flash_cnt <= 6'd45;
             end else begin
                 if (flash_cnt != 6'd0) flash_cnt <= flash_cnt - 6'd1;
                 if (flash_busy)        flash_cs  <= 1'b0;
@@ -123,8 +103,7 @@ module kick_switch_lite (
                     word_count <= word_count - 22'd1;
 
                     /* Patch KS 1.2/1.3: bne.b → bra.b, erzwingt Speicher-
-                       erkennung bei jedem Reset (nötig bei Flash-Chips mit
-                       langer Zugriffszeit). Gilt für beide ROM-Positionen:
+                       erkennung bei jedem Reset. Gilt für beide ROM-Positionen:
                        $f80154 (flash 3800aa) und Mirror $fc0154 (flash 3a00aa). */
                     if ((flash_addr == 22'h3800aa || flash_addr == 22'h3a00aa) &&
                          flash_dout == 16'h6678)

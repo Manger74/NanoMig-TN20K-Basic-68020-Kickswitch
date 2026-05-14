@@ -81,7 +81,6 @@
         <File path="misc/video_analyzer.v" type="file.verilog" enable="1"/>
         <File path="misc/ws2812.v" type="file.verilog" enable="1"/>
  	    <File path="misc/ws2812.v" type="file.verilog" enable="1"/>
-        <File path="misc/kick_switch_lite.v" type="file.verilog" enable="1"/>
         <File path="tang/nano20k/amigaclks.v" type="file.verilog" enable="1"/>
         <File path="tang/nano20k/gowin_dpb/ide_dpram.v" type="file.verilog" enable="1"/>
         <File path="tang/nano20k/gowin_dpb/sector_dpram.v" type="file.verilog" enable="1"/>
