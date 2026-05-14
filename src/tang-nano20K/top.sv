@@ -565,9 +565,6 @@ nanomig nanomig
 wire	flash_ready;  
 wire	mem_ready = sdram_ready && flash_ready && pll_lock;     
 
-// Kick Switch Lite: copy Kickstart ROM from SPI flash to SDRAM after 
-// reset and when user changes the selected Kickstart ROM in the OSD.
-
 reg		start_rom_copy;
 reg		mem_ready_D;
 
@@ -604,15 +601,13 @@ assign leds[3] = !rom_done;
 reg [21:0]  flash_ram_addr;   
 reg         flash_ram_write;
 reg [5:0]   flash_cnt;  
+// -------------------------------------------------------------------------	
 reg [2:0]   osd_kickstartD;
 reg         restart_rom_copy;
 
-// always @(posedge clk_85m or negedge mem_ready) begin
-always @(posedge clk_85m) begin
+always @(posedge clk_85m or negedge mem_ready) begin
     if(!mem_ready) begin
-
         osd_kickstartD <= osd_kickstart;
-
         case(osd_kickstart)
 	            2'b00: flash_addr <= 22'h380000; // Kickstart 1.3 (at 7,0 MB)
 				2'b01: flash_addr <= 22'h200000; // Kickstart 3.1 (at 4,0 MB)
@@ -626,16 +621,12 @@ always @(posedge clk_85m) begin
         flash_ram_write <= 1'b0;
         flash_cs        <= 1'b0;
         flash_cnt       <= 6'd0;
-
     end else begin
-
-        // detect change of kickstart from OSD
-       restart_rom_copy <= 1'b0;
+  
+       restart_rom_copy <= 1'b0;       // detect change of kickstart from OSD
 
         if(osd_kickstart != osd_kickstartD) begin
-
             osd_kickstartD <= osd_kickstart;
-
         case(osd_kickstart)
 	            2'b00: flash_addr <= 22'h380000; // Kickstart 1.3 (at 7,0 MB)
 				2'b01: flash_addr <= 22'h200000; // Kickstart 3.1 (at 4,0 MB)
@@ -653,7 +644,7 @@ always @(posedge clk_85m) begin
             restart_rom_copy <= 1'b1;
         end
 
-        // copy ROM from flash to memory
+        //----------------------------- copy ROM from flash to memory----------------------
         if((start_rom_copy || restart_rom_copy || state == 23) && (word_count != 0)) begin
             flash_cs <= 1'b1;
             flash_cnt <= 6'd45; // >= 30 @ 32MHz -- AMR, increase to 45 @ 85.5MHz
@@ -666,12 +657,7 @@ always @(posedge clk_85m) begin
                state <= 1;
                flash_addr <= flash_addr + 22'd1;
                word_count <= word_count - 22'd1;
-			   
-               /* patch Kickstart 1.3 to force memory detection on every reset. 
-               This is needed for some flash chips that have a long access time and would otherwise 
-               cause a timeout during memory detection. The patch transforms a bne.b to a bra.b in the 
-               Kickstart ROM, so the memory detection loop is executed on every reset. The patch is 
-               applied to both the original and the mirror location of the code in the Kickstart ROM. */
+
                if ((flash_addr == 22'h3400aa || flash_addr == 22'h3600aa) && flash_dout == 16'h6678)
 				 // transform bne.b to bra.b in Kickstart ROM 1.2/1.3 @ $f80154 (mirror) and $fc0154
 				 // this forces memory detection on every reset
@@ -691,7 +677,6 @@ always @(posedge clk_85m) begin
         if(state == 21)  flash_ram_addr <= flash_ram_addr + 22'd1;
     end
 end
-
 
 // ----------------------------- SDRAM ---------------------------------
 
