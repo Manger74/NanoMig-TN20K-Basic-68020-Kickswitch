@@ -36,6 +36,7 @@
   </actions>
   
   <menu label="NanoMig 68020">
+	<fileselector label="HW-Config:" ext="amiga.ini" index="6" default="amiga.ini"/ action="reset">
     <fileselector label="Floppy DF0:" ext="adf" index="0"/>
 
   <menu label="System"> //-------------------------------------SYSTEM---
