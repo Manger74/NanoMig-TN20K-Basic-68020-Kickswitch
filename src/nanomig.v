@@ -87,7 +87,7 @@ module nanomig (
    input         fastram_ready
 );
 `default_nettype none
-   
+
 wire cpu_rst;
 wire [15:0] ram_din;
 wire uart_cts;
@@ -162,7 +162,7 @@ wire [23:1] chip_addr;
 
 wire	    ovl;
    
-wire [1:0] cpucfg = 2'b00;     // 68020=11
+wire [1:0] cpucfg = 2'b11;     // 68020=11
 // cache bits: dcache, kick, chip
 // wire [2:0] cachecfg = { 1'b0, ~ovl, 1'b0 };
 wire [2:0] cachecfg = 3'b000;  // no turbo chip and kick, no caches   
@@ -192,7 +192,7 @@ wire	    ram_lds;
 wire	    ram_uds;
    
 // ram_ready finally is the clkena for the tg68k
-reg	    ram_ready;
+wire	    ram_ready;
 
 // generate a ram_cs at the begin of the bus cycle, so the ram cycle starts
 // at the right time
@@ -206,19 +206,9 @@ always @(negedge clk_sys)
 reg	    ram_cs_triggerD;
 always @(posedge clk_sys)
   ram_cs_triggerD <= ram_cs_trigger;   
-   
-// neg/clk7
-reg frr_d=1'b0;
-always @(posedge clk_sys) begin
-   if(!cpu_rst)
-      ram_ready<=1'b0;
-   else if(!ram_sel)
-      ram_ready<=1'b0;
-   else if(fastram_ready!=frr_d)
-      ram_ready<=1'b1;
-   frr_d <= fastram_ready;
-end
-   
+  
+assign ram_ready = fastram_ready;  
+ 
 cpu_wrapper cpu_wrapper
 (
 	.reset        (cpu_rst         ),
@@ -266,15 +256,9 @@ cpu_wrapper cpu_wrapper
 	.cacr         (cpu_cacr        ),
 	.nmi_addr     (cpu_nmi_addr    )
 );
-   
-reg ram_sel_d;
-always @(posedge clk_sys) begin
-   if( cpu_ph2) begin
-		if(!ram_sel_d)
-			fastram_sel <= ram_sel;
-		ram_sel_d <= ram_sel;
-	end
-   if( fastram_ready != frr_d ) fastram_sel <= 1'b0;   
+
+always @(*) begin
+	fastram_sel <= ram_sel && (cpu_state != 2'b01);
 end
 
 assign fastram_addr = ram_addr;
@@ -410,8 +394,8 @@ always @(posedge clk_sys) begin
       // check if amiga wants to read a sector
       if(!sdc_busy && !ide_sdc_rd && ide_exec == IDE_EXEC_READ_SECTOR ) begin
 	 // this really only works with HW multipliers in the FPGA
-	 ide_sdc_sector <= (ide_cylinder * heads[ide_drv] + ide_head) * sectors[ide_drv] +
-                  ide_sector - 1;
+	 ide_sdc_sector <= (ide_cylinder * heads[0] + ide_head) * sectors[0] +
+			   ide_sector - 1;
 
 	 // TODO: check why this message comes twice, the test for !ide_sdc_rd
 	 // should prevent that
@@ -426,8 +410,8 @@ always @(posedge clk_sys) begin
       // check if amiga wants to write
       if (!sdc_busy && !ide_sdc_wr && ide_exec == IDE_EXEC_WRITE_SECTOR ) begin
 	 // this really only works with HW multipliers in the FPGA
-	 ide_sdc_sector <= (ide_cylinder * heads[ide_drv] + ide_head) * sectors[ide_drv] +
-                  ide_sector - 1;
+	 ide_sdc_sector <= (ide_cylinder * heads[0] + ide_head) * sectors[0] +
+			   ide_sector - 1;
 	 
 	 $display("IDE%0d WR %0d/%0d/%0d -> %0d", ide_drv, 
 		  ide_cylinder, ide_head, ide_sector, 
@@ -658,11 +642,11 @@ always @(posedge clk_sys) begin
 	      // advance to next sector
 	      // ide_sector goes from 1 to sectors,
 	      // ide_head goes from 0 to heads-1
-		   if ( ide_sector < sectors[ide_drv] )
+	      if ( ide_sector < sectors[0] )
 		ide_sector <= ide_sector + 8'd1;
 	      else begin
 		 ide_sector <= 8'd1;
-			  if( ide_head < heads[ide_drv]-1 )
+		 if( ide_head < heads[0]-1 )
 		   ide_head <= ide_head + 8'd1;
 		 else begin
 		    ide_head <= 8'd0;
